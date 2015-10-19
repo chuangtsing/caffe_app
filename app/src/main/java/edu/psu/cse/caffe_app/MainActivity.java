@@ -546,14 +546,14 @@ public class MainActivity extends Activity {
                     if(mat == null) continue;
 //                    Size sz = new Size(256,256);
 //                    resize(mat, mat, sz);
-                    transpose(mat, mat);
-                    flip(mat, mat, 1);
+//                    transpose(mat, mat);
+//                    flip(mat, mat, 1);
 //                    vecMat.add(mat.clone());
                     n_frame_extracted++;
                     Log.d(LOG_TAG, "Extracted picture " + String.valueOf(n_frame_extracted)
                             +  " at " + String.valueOf(System.currentTimeMillis() - extract_start) + "ms");
-                    String img_path = "/sdcard/Download/" + "frame-" + String.valueOf(i) +".jpg";
-                    imwrite(img_path, mat);
+//                    String img_path = "/sdcard/Download/" + "frame-" + String.valueOf(i) +".jpg";
+//                    imwrite(img_path, mat);
 //                    IplImage image = converterToIplImage.convert(frame);
 //                    cvSaveImage(img_path, image);
 //                    Log.d(LOG_TAG, "Saved picture " + String.valueOf(i/((int)frame_rate)) +  " !!");
