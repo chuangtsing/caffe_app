@@ -76,6 +76,7 @@ import static org.bytedeco.javacpp.opencv_videoio.*;
 import static org.bytedeco.javacpp.opencv_videostab.*;
 
 
+
 public class MainActivity extends Activity {
     private static final String LOG_TAG = "MainActivity";
     private static final int REQUEST_IMAGE_CAPTURE = 100;
@@ -503,8 +504,19 @@ public class MainActivity extends Activity {
         @Override
         protected Integer doInBackground(String... strings) {
 
+            try {
+                FileSender filesender = new FileSender("130.203.8.40", 9000);
+                filesender.send(strings[0]);
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+
         	FFmpegFrameGrabber grabber = new FFmpegFrameGrabber(strings[0]);
             try {
+
+
+
                 long extract_start = System.currentTimeMillis();
                 OpenCVFrameConverter.ToMat converterToMat = new OpenCVFrameConverter.ToMat();
                 grabber.start();
